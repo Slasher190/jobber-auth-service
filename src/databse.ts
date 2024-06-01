@@ -5,7 +5,7 @@ import { Sequelize } from 'sequelize';
 
 const log: Logger = winstonLogger(`${config.ELASTIC_SERACH_URL}`, 'authDatabaseServer', 'debug');
 
-export const sequelze: Sequelize = new Sequelize({
+export const sequelze: Sequelize = new Sequelize(config.MYSQL_DB!, {
   dialect: 'mysql',
   logging: false,
   dialectOptions: {
