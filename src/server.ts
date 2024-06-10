@@ -10,6 +10,7 @@ import cors from 'cors';
 import { verify } from 'jsonwebtoken';
 import compression from 'compression';
 import { checkConnection } from '@auth/elasticsearch';
+import { appRoutes } from '@auth/routes';
 
 const SERVER_PORT: number = 4002;
 
@@ -54,7 +55,7 @@ function standardMiddleware(app: Application): void {
 }
 
 function routesMiddleware(app: Application): void {
-  console.log(app);
+  appRoutes(app);
 }
 
 async function startQueues(): Promise<void> {}
